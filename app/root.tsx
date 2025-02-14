@@ -12,6 +12,12 @@ import appStylesHref from "./app.css?url";
 
 import { getContacts } from "./data";
 
+import { createEmptyContact } from "./data";
+
+export async function action() {
+  const contact = await createEmptyContact();
+  return { contact };
+}
 
 export function HydrateFallback() {
   return (
